@@ -1,0 +1,36 @@
+check:
+  # チェック間隔
+  interval_sec: 900
+
+# メール認証のための IMAP サーバーへのログイン情報
+notify:
+  mail:
+    smtp:
+      hostname: smtp.gmail.com
+      port: 587
+      user: ユーザ
+      pass: パスワード
+
+      
+    content:
+      subject: 【野原工芸】来店予約
+      message: 空きができました！
+      to: 送信先メールアドレス
+      from: 送信元メールアドレス
+
+# データ収集で使用する一時ファイルの置き場所
+data:
+  # Web ブラウザの作業フォルダ
+  selenium: data
+
+  # デバッグ用のファイルを生成するフォルダ
+  debug: data/debug
+
+  # 作業用のファイルを生成するフォルダ
+  work: data/work
+
+liveness:
+  file:
+    watcher: /dev/shm/nohara_calendar.healthz
+
+  interval: 3600
